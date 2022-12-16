@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "133275889952",
+    "project_id": "kodego-firebase-demo",
+    "storage_bucket": "kodego-firebase-demo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:133275889952:android:eaaaf69c98449e2d75e745",
+        "android_client_info": {
+          "package_name": "com.kodego.velascoben.firebasedemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "133275889952-g765nkhtu6n57jn8bbljb0ij2ovrei02.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAauShEYrHIrhGRbUCJ3pKMScevopL-XD0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "133275889952-g765nkhtu6n57jn8bbljb0ij2ovrei02.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
