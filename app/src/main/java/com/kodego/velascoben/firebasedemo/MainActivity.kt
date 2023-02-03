@@ -38,12 +38,39 @@ class MainActivity : AppCompatActivity() {
             var name = binding.etName.text.toString()
             var salary = binding.etSalary.text.toString()
 
-            dao.add(Employee("",name,salary))
-            adapter.notifyDataSetChanged()
-            binding.etName.setText("")
-            binding.etSalary.setText("")
-            binding.etName.requestFocus()
-            displayMessage("New Employee Added")
+            dao.get().addValueEventListener(object:ValueEventListener{
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    var employees : ArrayList<Employee> = ArrayList<Employee>()
+
+                    var dataFromDB = snapshot.children
+
+                    for (data in dataFromDB) {
+
+                        var dataName = data.child("name").value.toString()
+
+                        if(name == dataName) {
+
+                            Toast.makeText(applicationContext,"Employee already exists",Toast.LENGTH_LONG).show()
+
+                        } else {
+
+                            dao.add(Employee("", name, salary))
+                            adapter.notifyDataSetChanged()
+                            binding.etName.setText("")
+                            binding.etSalary.setText("")
+                            binding.etName.requestFocus()
+                            displayMessage("New Employee Added")
+                        }
+                    }
+
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    TODO("Not yet implemented")
+                }
+            })
+
+
         }
 
     }
